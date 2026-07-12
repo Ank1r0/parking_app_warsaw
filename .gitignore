@@ -1,0 +1,12 @@
+# secrets — never commit real credentials
+secret.json
+
+# local environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# collected API snapshots and derived tables (data, not code)
+raw_data/
+silver/

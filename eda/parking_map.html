@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3b3df2d5f8e67d2ccfa3d037eee57cd5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3b3df2d5f8e67d2ccfa3d037eee57cd5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3b3df2d5f8e67d2ccfa3d037eee57cd5 = L.map(
+                "map_3b3df2d5f8e67d2ccfa3d037eee57cd5",
+                {
+                    center: [52.2319, 21.0067],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d7781b999e86fe87ae9c8f8c369236b2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d7781b999e86fe87ae9c8f8c369236b2.addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+            var marker_6a210b9365f53896a1fcf987c0540d3d = L.marker(
+                [52.238207, 21.019243],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_5d1efcc84b3490afd488ed6cf6a0c1dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4a0e904957cdf9a31a38ceb63a43988 = $(`<div id="html_c4a0e904957cdf9a31a38ceb63a43988" style="width: 100.0%; height: 100.0%;">Parking przy ul. Karasia<br>free: 4 / 24</div>`)[0];
+                popup_5d1efcc84b3490afd488ed6cf6a0c1dd.setContent(html_c4a0e904957cdf9a31a38ceb63a43988);
+            
+        
+
+        marker_6a210b9365f53896a1fcf987c0540d3d.bindPopup(popup_5d1efcc84b3490afd488ed6cf6a0c1dd)
+        ;
+
+        
+    
+    
+            marker_6a210b9365f53896a1fcf987c0540d3d.bindTooltip(
+                `<div>
+                     Parking przy ul. Karasia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c368710ac70427beccc96acfd21122e2 = L.marker(
+                [52.226671, 21.015448],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_45fee04f211abd383b360c4a3d13874d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f420a9d6420c04bfa93107539ab20d4 = $(`<div id="html_7f420a9d6420c04bfa93107539ab20d4" style="width: 100.0%; height: 100.0%;">Parking przy ul. Hożej<br>free: 11 / 45</div>`)[0];
+                popup_45fee04f211abd383b360c4a3d13874d.setContent(html_7f420a9d6420c04bfa93107539ab20d4);
+            
+        
+
+        marker_c368710ac70427beccc96acfd21122e2.bindPopup(popup_45fee04f211abd383b360c4a3d13874d)
+        ;
+
+        
+    
+    
+            marker_c368710ac70427beccc96acfd21122e2.bindTooltip(
+                `<div>
+                     Parking przy ul. Hożej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4245604d95ae29bc3487c7e88b93cd05 = L.marker(
+                [52.21859, 21.008419],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_5473f8aa899bfd09c234d7697d577225 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa0abb0a078527618aa0166db931ee95 = $(`<div id="html_fa0abb0a078527618aa0166db931ee95" style="width: 100.0%; height: 100.0%;">Parking przy ul. Filtrowej<br>free: 30 / 116</div>`)[0];
+                popup_5473f8aa899bfd09c234d7697d577225.setContent(html_fa0abb0a078527618aa0166db931ee95);
+            
+        
+
+        marker_4245604d95ae29bc3487c7e88b93cd05.bindPopup(popup_5473f8aa899bfd09c234d7697d577225)
+        ;
+
+        
+    
+    
+            marker_4245604d95ae29bc3487c7e88b93cd05.bindTooltip(
+                `<div>
+                     Parking przy ul. Filtrowej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_25d8cc60773de9ef10612d7eec446e38 = L.marker(
+                [52.251628, 21.014509],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_2c2c6cf4696863a36ca7003fd58e07b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d58fb8d3a525302b6422c488a5e013f = $(`<div id="html_9d58fb8d3a525302b6422c488a5e013f" style="width: 100.0%; height: 100.0%;">Parking przy ul. Bugaj<br>free: 98 / 200</div>`)[0];
+                popup_2c2c6cf4696863a36ca7003fd58e07b7.setContent(html_9d58fb8d3a525302b6422c488a5e013f);
+            
+        
+
+        marker_25d8cc60773de9ef10612d7eec446e38.bindPopup(popup_2c2c6cf4696863a36ca7003fd58e07b7)
+        ;
+
+        
+    
+    
+            marker_25d8cc60773de9ef10612d7eec446e38.bindTooltip(
+                `<div>
+                     Parking przy ul. Bugaj
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7e06d6b029d7e704f9870106394a0a39 = L.marker(
+                [52.252094, 21.0127],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_bbce894879b6b3bf850e9baddcb831bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2886371667229e7c223a27f34a98c3c = $(`<div id="html_c2886371667229e7c223a27f34a98c3c" style="width: 100.0%; height: 100.0%;">Parking przy ul. Boleść<br>free: 37 / 85</div>`)[0];
+                popup_bbce894879b6b3bf850e9baddcb831bd.setContent(html_c2886371667229e7c223a27f34a98c3c);
+            
+        
+
+        marker_7e06d6b029d7e704f9870106394a0a39.bindPopup(popup_bbce894879b6b3bf850e9baddcb831bd)
+        ;
+
+        
+    
+    
+            marker_7e06d6b029d7e704f9870106394a0a39.bindTooltip(
+                `<div>
+                     Parking przy ul. Boleść
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_59eafcdf374ce03c67bf5df422026b2a = L.marker(
+                [52.245159, 21.01919],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_bd0bbcd558a42636bda75f4d7944ee3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84212e848c911c224c5be1e2a0f892cf = $(`<div id="html_84212e848c911c224c5be1e2a0f892cf" style="width: 100.0%; height: 100.0%;">Parking przy ul. Bednarskiej<br>free: 21 / 56</div>`)[0];
+                popup_bd0bbcd558a42636bda75f4d7944ee3a.setContent(html_84212e848c911c224c5be1e2a0f892cf);
+            
+        
+
+        marker_59eafcdf374ce03c67bf5df422026b2a.bindPopup(popup_bd0bbcd558a42636bda75f4d7944ee3a)
+        ;
+
+        
+    
+    
+            marker_59eafcdf374ce03c67bf5df422026b2a.bindTooltip(
+                `<div>
+                     Parking przy ul. Bednarskiej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_047bb2e9098b2eb29f0b39d417669cdc = L.marker(
+                [52.249166, 21.004752],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_5d10870eb031da192c1065e18a7f8d57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fff24b011f65fbf70b0149996701a2a9 = $(`<div id="html_fff24b011f65fbf70b0149996701a2a9" style="width: 100.0%; height: 100.0%;">PARKING POD PLACEM KRASIŃSKICH<br>free: 96 / 356</div>`)[0];
+                popup_5d10870eb031da192c1065e18a7f8d57.setContent(html_fff24b011f65fbf70b0149996701a2a9);
+            
+        
+
+        marker_047bb2e9098b2eb29f0b39d417669cdc.bindPopup(popup_5d10870eb031da192c1065e18a7f8d57)
+        ;
+
+        
+    
+    
+            marker_047bb2e9098b2eb29f0b39d417669cdc.bindTooltip(
+                `<div>
+                     PARKING POD PLACEM KRASIŃSKICH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_026f9a9f911c7cec8efa7a207aa59d74 = L.marker(
+                [52.219031, 21.015129],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_45709725b3d95ef1cddaced49f349421 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_569b3756c0bac183d4864bc509f91a63 = $(`<div id="html_569b3756c0bac183d4864bc509f91a63" style="width: 100.0%; height: 100.0%;">PARKING POD ULICĄ WARYŃSKIEGO<br>free: 23 / 130</div>`)[0];
+                popup_45709725b3d95ef1cddaced49f349421.setContent(html_569b3756c0bac183d4864bc509f91a63);
+            
+        
+
+        marker_026f9a9f911c7cec8efa7a207aa59d74.bindPopup(popup_45709725b3d95ef1cddaced49f349421)
+        ;
+
+        
+    
+    
+            marker_026f9a9f911c7cec8efa7a207aa59d74.bindTooltip(
+                `<div>
+                     PARKING POD ULICĄ WARYŃSKIEGO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_36b86116ca5cd017b7ea4412fd8907c8 = L.marker(
+                [52.234989, 21.013279],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_a20e30b7f543ecfb725a6507a84a48e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0f97678f32865be530a8179c365997a = $(`<div id="html_e0f97678f32865be530a8179c365997a" style="width: 100.0%; height: 100.0%;">Parking Pl. Powstańców Warszawy<br>free: 316 / 396</div>`)[0];
+                popup_a20e30b7f543ecfb725a6507a84a48e0.setContent(html_e0f97678f32865be530a8179c365997a);
+            
+        
+
+        marker_36b86116ca5cd017b7ea4412fd8907c8.bindPopup(popup_a20e30b7f543ecfb725a6507a84a48e0)
+        ;
+
+        
+    
+    
+            marker_36b86116ca5cd017b7ea4412fd8907c8.bindTooltip(
+                `<div>
+                     Parking Pl. Powstańców Warszawy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e4cfd37c4ed3ec5ebd15f9910533329f = L.marker(
+                [52.231693, 21.008925],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_0217546322c70091553a3dfbcd6f850a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54e398b1a1eaf4bc0536ff6d52bf7211 = $(`<div id="html_54e398b1a1eaf4bc0536ff6d52bf7211" style="width: 100.0%; height: 100.0%;">Parking Pałac Kultury i Nauki<br>free: 308 / 603</div>`)[0];
+                popup_0217546322c70091553a3dfbcd6f850a.setContent(html_54e398b1a1eaf4bc0536ff6d52bf7211);
+            
+        
+
+        marker_e4cfd37c4ed3ec5ebd15f9910533329f.bindPopup(popup_0217546322c70091553a3dfbcd6f850a)
+        ;
+
+        
+    
+    
+            marker_e4cfd37c4ed3ec5ebd15f9910533329f.bindTooltip(
+                `<div>
+                     Parking Pałac Kultury i Nauki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ce440a7d60a22d8f44c72d20882a3a24 = L.marker(
+                [52.23956, 21.001779],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_487007e62f00779534e9ae5be1925ec8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fded4f66433a9ee7766e587c7f3c92ad = $(`<div id="html_fded4f66433a9ee7766e587c7f3c92ad" style="width: 100.0%; height: 100.0%;">Parking na Pl. Żelaznej Bramy<br>free: 17 / 47</div>`)[0];
+                popup_487007e62f00779534e9ae5be1925ec8.setContent(html_fded4f66433a9ee7766e587c7f3c92ad);
+            
+        
+
+        marker_ce440a7d60a22d8f44c72d20882a3a24.bindPopup(popup_487007e62f00779534e9ae5be1925ec8)
+        ;
+
+        
+    
+    
+            marker_ce440a7d60a22d8f44c72d20882a3a24.bindTooltip(
+                `<div>
+                     Parking na Pl. Żelaznej Bramy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_41c5b835d8fc8456f8c5e3348b87a12f = L.marker(
+                [52.251275, 20.99123],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_8bd8dc8d0192a6466fcf7180ca226748 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7275a1a7a329dd8dd368e32c5ac5637a = $(`<div id="html_7275a1a7a329dd8dd368e32c5ac5637a" style="width: 100.0%; height: 100.0%;">Parking przy ul. Miłej<br>free: 46 / 75</div>`)[0];
+                popup_8bd8dc8d0192a6466fcf7180ca226748.setContent(html_7275a1a7a329dd8dd368e32c5ac5637a);
+            
+        
+
+        marker_41c5b835d8fc8456f8c5e3348b87a12f.bindPopup(popup_8bd8dc8d0192a6466fcf7180ca226748)
+        ;
+
+        
+    
+    
+            marker_41c5b835d8fc8456f8c5e3348b87a12f.bindTooltip(
+                `<div>
+                     Parking przy ul. Miłej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b0e5c944ded6d47202ead05fa14a1011 = L.marker(
+                [52.234687, 21.035858],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_0ef3a8f30a31374ca94e328e787d8b9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_65dce868db12ef57e45a2dd0dd6cb368 = $(`<div id="html_65dce868db12ef57e45a2dd0dd6cb368" style="width: 100.0%; height: 100.0%;">Parking przy Al. 3 Maja (Solec)<br>free: 21 / 55</div>`)[0];
+                popup_0ef3a8f30a31374ca94e328e787d8b9f.setContent(html_65dce868db12ef57e45a2dd0dd6cb368);
+            
+        
+
+        marker_b0e5c944ded6d47202ead05fa14a1011.bindPopup(popup_0ef3a8f30a31374ca94e328e787d8b9f)
+        ;
+
+        
+    
+    
+            marker_b0e5c944ded6d47202ead05fa14a1011.bindTooltip(
+                `<div>
+                     Parking przy Al. 3 Maja (Solec)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4a1ab47cb43fcaea1491250cdf17262e = L.marker(
+                [52.221063, 21.036642],
+                {
+}
+            ).addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+    
+        var popup_915d5145266738930eadd25489a141ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6173bdbfbb0d0ed7678e96f74200012 = $(`<div id="html_d6173bdbfbb0d0ed7678e96f74200012" style="width: 100.0%; height: 100.0%;">Parking przy ul. Myśliwieckiej<br>free: 53 / 94</div>`)[0];
+                popup_915d5145266738930eadd25489a141ae.setContent(html_d6173bdbfbb0d0ed7678e96f74200012);
+            
+        
+
+        marker_4a1ab47cb43fcaea1491250cdf17262e.bindPopup(popup_915d5145266738930eadd25489a141ae)
+        ;
+
+        
+    
+    
+            marker_4a1ab47cb43fcaea1491250cdf17262e.bindTooltip(
+                `<div>
+                     Parking przy ul. Myśliwieckiej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_d7781b999e86fe87ae9c8f8c369236b2.addTo(map_3b3df2d5f8e67d2ccfa3d037eee57cd5);
+        
+</script>
+</html>
