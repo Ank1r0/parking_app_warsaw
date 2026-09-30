@@ -10,3 +10,7 @@ __pycache__/
 # collected API snapshots and derived tables (data, not code)
 raw_data/
 silver/
+
+# private design discussions — final decisions go to docs/ instead
+docs/discussions/
+
