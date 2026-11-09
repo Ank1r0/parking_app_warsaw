@@ -1,5 +1,9 @@
 # iva_park — delivery plan
 
+> **Note (2026-09-30):** the project is being redesigned. This plan was the starting
+> point: it is kept as written so later designs can be compared against it. Where the
+> two differ, [`design_decisions.md`](design_decisions.md) takes precedence.
+
 Goal: a continuously growing parking-availability dataset collected without a
 laptop, fully reproducible from this repo, demoable live in an interview.
 

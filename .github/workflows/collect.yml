@@ -1,0 +1,39 @@
+name: Collect parking snapshot
+
+on:
+  schedule:
+    # every 15 minutes, avoiding the top of the hour (GitHub's busiest time)
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write  # lets the job request a GitHub OIDC token for keyless GCP login
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: ping/requirements.txt
+
+      - run: pip install -r ping/requirements.txt
+
+      - uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: projects/658024903356/locations/global/workloadIdentityPools/github/providers/parking-app-warsaw
+          service_account: parking-collector@iva-park.iam.gserviceaccount.com
+
+      - run: python ping/ping_github_action.py
+        env:
+          WARSAW_UM_TOKEN: ${{ secrets.WARSAW_UM_TOKEN }}

@@ -141,6 +141,11 @@ dataset grows whether or not anything of mine is switched on.
 Full reasoning, the FinOps breakdown and the risk register are in
 [`docs/plan.md`](docs/plan.md) and [`docs/architecture.md`](docs/architecture.md).
 
+> **Redesign in progress.** The architecture above is the starting point, kept for
+> comparison. Decisions from the redesign are recorded, with their reasoning, in
+> [`docs/design_decisions.md`](docs/design_decisions.md) and take precedence where
+> they differ.
+
 ## Known limits
 
 - **Cron drift** — GitHub Actions schedules fire late under load and occasionally skip.

@@ -1,5 +1,9 @@
 # iva_park — architecture
 
+> **Note (2026-09-30):** the project is being redesigned. This architecture was the
+> starting point: it is kept as written so later designs can be compared against it.
+> Where the two differ, [`design_decisions.md`](design_decisions.md) takes precedence.
+
 Automated collection of Warsaw parking availability into a historical dataset
 for occupancy forecasting (and, later, an app serving predictions).
 
