@@ -1,6 +1,7 @@
 """Fetch current parking availability from the Warsaw open data API and
-store the raw response in the bronze bucket. Run by GitHub Actions every
-15 minutes; ping_parkings.py is the local equivalent that saves to raw_data/."""
+store the raw response in the bronze bucket. Runnable as a script, and used
+by main.py (the Cloud Run function); ping_parkings.py is the local
+equivalent that saves to raw_data/."""
 
 import json
 import os
@@ -18,20 +19,22 @@ BUCKET_NAME = "iva_park_bronze"
 
 
 def load_token() -> str:
-    token = os.environ.get(TOKEN_ENV)
+    # strip: a token piped into a secret store can carry a trailing newline
+    token = os.environ.get(TOKEN_ENV, "").strip()
     if not token:
-        raise SystemExit(f"{TOKEN_ENV} is not set")
+        raise RuntimeError(f"{TOKEN_ENV} is not set")
     return token
 
 
-def build_envelope(payload: dict, ingested_at: datetime) -> dict:
-    on_github = os.environ.get("GITHUB_ACTIONS") == "true"
+def build_envelope(
+    payload: dict, ingested_at: datetime, collector: str, run_id: str | None
+) -> dict:
     return {
         "source": API_NAME,
         "endpoint": ENDPOINT,
         "ingested_at": ingested_at.isoformat(),
-        "collector": "github_actions" if on_github else "local",
-        "run_id": os.environ.get("GITHUB_RUN_ID"),
+        "collector": collector,
+        "run_id": run_id,
         "payload": payload,
     }
 
@@ -53,17 +56,27 @@ def save_to_bucket(body: str, name: str) -> str:
     return f"gs://{BUCKET_NAME}/{name}"
 
 
-def main() -> None:
+def collect(collector: str, run_id: str | None) -> tuple[int, str]:
     creds = {"base_url": BASE_URL, "token": load_token()}
     payload = fetch_parkings(creds)
     ingested_at = datetime.now(timezone.utc)
     body = json.dumps(
-        build_envelope(payload, ingested_at), ensure_ascii=False, indent=2
+        build_envelope(payload, ingested_at, collector, run_id),
+        ensure_ascii=False, indent=2,
     )
     target = save_to_bucket(body, object_name(ingested_at))
 
     parkings = payload.get("carParks") or payload.get("Parkings") or []
-    print(f"Saved {len(parkings)} parkings to {target}")
+    return len(parkings), target
+
+
+def main() -> None:
+    on_github = os.environ.get("GITHUB_ACTIONS") == "true"
+    count, target = collect(
+        collector="github_actions" if on_github else "local",
+        run_id=os.environ.get("GITHUB_RUN_ID"),
+    )
+    print(f"Saved {count} parkings to {target}")
 
 
 if __name__ == "__main__":

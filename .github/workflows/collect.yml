@@ -34,6 +34,6 @@ jobs:
           workload_identity_provider: projects/658024903356/locations/global/workloadIdentityPools/github/providers/parking-app-warsaw
           service_account: parking-collector@iva-park.iam.gserviceaccount.com
 
-      - run: python ping/ping_github_action.py
+      - run: python ping/bronze_data_collector_warsaw_gcp.py
         env:
           WARSAW_UM_TOKEN: ${{ secrets.WARSAW_UM_TOKEN }}
